@@ -1,0 +1,556 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+    min-height: 100vh;
+}
+
+
+/* HEADER */
+
+.header {
+    background: #172b4d;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    margin-bottom: 5px;
+}
+
+.header p {
+    opacity: 0.8;
+}
+
+
+/* THEME BUTTON */
+
+.theme-btn {
+    background: white;
+    color: #172b4d;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+/* NAVBAR */
+
+.navbar {
+    background: white;
+    padding: 10px 30px;
+    display: flex;
+    gap: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.nav-btn {
+    border: none;
+    background: transparent;
+    padding: 12px 18px;
+    cursor: pointer;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+.nav-btn:hover {
+    background: #e9eef5;
+}
+
+.nav-btn.active {
+    background: #172b4d;
+    color: white;
+}
+
+
+/* MAIN */
+
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px;
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+.page h2 {
+    margin-bottom: 25px;
+}
+
+
+/* DASHBOARD CARDS */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.card-icon {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 15px;
+    color: #555;
+}
+
+.card p {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
+/* DASHBOARD BOX */
+
+.dashboard-box {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.dashboard-box h3 {
+    margin-bottom: 15px;
+}
+
+.dashboard-box p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+
+/* INFORMATION GRID */
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.info-grid div {
+    background: #f1f4f8;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* FORM BOX */
+
+.form-box {
+    background: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.form-box h3 {
+    margin-bottom: 20px;
+    color: #172b4d;
+}
+
+.help {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+
+/* FORM GRID */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+    outline: none;
+    border-color: #172b4d;
+}
+
+
+/* DAMAGE ROW */
+
+.damage-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.damage-row strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.damage-row small {
+    color: #777;
+}
+
+.damage-select {
+    width: 180px;
+    padding: 10px;
+    border-radius: 7px;
+    border: 1px solid #bbb;
+}
+
+
+/* DAMAGE RESULT */
+
+.damage-result {
+    text-align: center;
+    background: #f3f6fa;
+    margin-top: 25px;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.damage-result h3 {
+    margin-bottom: 10px;
+}
+
+#damagePercentage {
+    font-size: 45px;
+    font-weight: bold;
+    color: #172b4d;
+}
+
+#damageCategory {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+#placard {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: #d9f7df;
+    color: #16752a;
+    font-weight: bold;
+}
+
+
+/* BUTTONS */
+
+.form-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.save-btn,
+.clear-btn,
+.secondary-btn {
+    border: none;
+    padding: 13px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.save-btn {
+    background: #198754;
+    color: white;
+}
+
+.save-btn:hover {
+    background: #146c43;
+}
+
+.clear-btn {
+    background: #dc3545;
+    color: white;
+}
+
+.clear-btn:hover {
+    background: #bb2d3b;
+}
+
+.secondary-btn {
+    background: #172b4d;
+    color: white;
+}
+
+.secondary-btn:hover {
+    background: #0e1c33;
+}
+
+
+/* PHOTO */
+
+.photo-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.photo-preview img {
+    width: 180px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+}
+
+
+/* GPS */
+
+#gpsResult {
+    margin-top: 15px;
+    color: #555;
+}
+
+
+/* RECORD TOOLS */
+
+.record-tools {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.record-tools input {
+    flex: 1;
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+
+/* RECORD CARD */
+
+.record-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.record-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.record-header h3 {
+    color: #172b4d;
+}
+
+.record-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.record-details div {
+    background: #f3f5f7;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.record-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.delete-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 9px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.empty-message {
+    background: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    color: #777;
+}
+
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+    background: #172b4d;
+    color: white;
+}
+
+footer p {
+    margin: 5px;
+}
+
+
+/* DARK MODE */
+
+body.dark {
+    background: #121212;
+    color: #eee;
+}
+
+body.dark .navbar,
+body.dark .card,
+body.dark .dashboard-box,
+body.dark .form-box,
+body.dark .record-card,
+body.dark .empty-message {
+    background: #1f1f1f;
+    color: #eee;
+}
+
+body.dark .info-grid div,
+body.dark .record-details div,
+body.dark .damage-result {
+    background: #292929;
+}
+
+body.dark input,
+body.dark select,
+body.dark textarea {
+    background: #292929;
+    color: white;
+    border-color: #555;
+}
+
+body.dark .damage-row {
+    border-color: #555;
+}
+
+body.dark .nav-btn {
+    color: white;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .record-details {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .damage-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .damage-select {
+        width: 100%;
+    }
+
+    .record-details {
+        grid-template-columns: 1fr;
+    }
+
+    .record-tools {
+        flex-direction: column;
+    }
+
+}

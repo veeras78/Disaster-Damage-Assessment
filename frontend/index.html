@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Disaster Damage Assessment</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div>
+            <h1>🏚️ Disaster Damage Assessment</h1>
+            <p>Machine Learning Based Damage Survey System</p>
+        </div>
+
+        <button id="themeBtn" class="theme-btn">
+            🌙 Dark Mode
+        </button>
+
+    </header>
+
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+
+        <button class="nav-btn active" onclick="showPage('dashboard')">
+            📊 Dashboard
+        </button>
+
+        <button class="nav-btn" onclick="showPage('assessment')">
+            📝 New Assessment
+        </button>
+
+        <button class="nav-btn" onclick="showPage('records')">
+            📋 Records
+        </button>
+
+    </nav>
+
+
+    <main>
+
+
+        <!-- ================= DASHBOARD ================= -->
+
+        <section id="dashboard" class="page active">
+
+            <h2>Dashboard</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <div class="card-icon">📋</div>
+                    <h3>Total Surveys</h3>
+                    <p id="totalSurveys">0</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🟢</div>
+                    <h3>Minor</h3>
+                    <p id="minorCount">0</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🟠</div>
+                    <h3>Moderate</h3>
+                    <p id="moderateCount">0</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🔴</div>
+                    <h3>Severe</h3>
+                    <p id="severeCount">0</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">⚫</div>
+                    <h3>Total Damage</h3>
+                    <p id="totalDamageCount">0</p>
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-box">
+
+                <h3>System Information</h3>
+
+                <p>
+                    This application is designed to record and assess
+                    disaster-related building damage.
+                </p>
+
+                <p>
+                    Damage percentage is calculated using the condition
+                    of different building components.
+                </p>
+
+                <div class="info-grid">
+
+                    <div>
+                        <strong>Roof</strong>
+                        <span>22%</span>
+                    </div>
+
+                    <div>
+                        <strong>Walls</strong>
+                        <span>24%</span>
+                    </div>
+
+                    <div>
+                        <strong>Structure</strong>
+                        <span>20%</span>
+                    </div>
+
+                    <div>
+                        <strong>Floors</strong>
+                        <span>10%</span>
+                    </div>
+
+                    <div>
+                        <strong>Services</strong>
+                        <span>12%</span>
+                    </div>
+
+                    <div>
+                        <strong>Contents</strong>
+                        <span>12%</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= ASSESSMENT ================= -->
+
+        <section id="assessment" class="page">
+
+            <h2>New Damage Assessment</h2>
+
+            <form id="assessmentForm">
+
+
+                <!-- BASIC INFORMATION -->
+
+                <div class="form-box">
+
+                    <h3>1. Basic Information</h3>
+
+                    <div class="form-grid">
+
+                        <div class="input-group">
+                            <label>Disaster / Event Name</label>
+                            <input
+                                type="text"
+                                id="eventName"
+                                placeholder="Example: Chennai Flood 2026"
+                                required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Inspector Name</label>
+                            <input
+                                type="text"
+                                id="inspector"
+                                placeholder="Enter inspector name"
+                                required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Property Address</label>
+                            <input
+                                type="text"
+                                id="address"
+                                placeholder="Enter address"
+                                required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Zone / Area</label>
+                            <input
+                                type="text"
+                                id="zone"
+                                placeholder="Example: Zone 1">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Owner Name</label>
+                            <input
+                                type="text"
+                                id="owner"
+                                placeholder="Property owner">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Occupancy Type</label>
+
+                            <select id="occupancy">
+                                <option value="">Select</option>
+                                <option>Residential</option>
+                                <option>Commercial</option>
+                                <option>Industrial</option>
+                                <option>Public Building</option>
+                                <option>Other</option>
+                            </select>
+
+                        </div>
+
+                        <div class="input-group">
+                            <label>Disaster Type</label>
+
+                            <select id="hazard">
+
+                                <option value="">Select</option>
+
+                                <option>Flood</option>
+
+                                <option>Cyclone</option>
+
+                                <option>Earthquake</option>
+
+                                <option>Landslide</option>
+
+                                <option>Fire</option>
+
+                                <option>Other</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="input-group">
+                            <label>Construction Type</label>
+
+                            <select id="construction">
+
+                                <option value="">Select</option>
+
+                                <option>Concrete</option>
+
+                                <option>Brick</option>
+
+                                <option>Steel</option>
+
+                                <option>Wood</option>
+
+                                <option>Mixed</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- DAMAGE COMPONENTS -->
+
+                <div class="form-box">
+
+                    <h3>2. Building Damage Assessment</h3>
+
+                    <p class="help">
+                        Select the damage level for each component.
+                    </p>
+
+
+                    <!-- ROOF -->
+
+                    <div class="damage-row">
+
+                        <div>
+                            <strong>🏠 Roof and Covering</strong>
+                            <small>Sheeting, tiles, trusses</small>
+                        </div>
+
+                        <select class="damage-select" data-weight="0.22">
+                            <option value="0">None</option>
+                            <option value="1">Minor</option>
+                            <option value="2">Moderate</option>
+                            <option value="3">Severe</option>
+                            <option value="4">Total</option>
+                        </select>
+
+                    </div>
+
+
+                    <!-- WALL -->
+
+                    <div class="damage-row">
+
+                        <div>
+                            <strong>🧱 Walls</strong>
+                            <small>Cracking, collapse, out-of-plumb</small>
+                        </div>
+
+                        <select class="damage-select" data-weight="0.24">
+                            <option value="0">None</option>
+                            <option value="1">Minor</option>
+                            <option value="2">Moderate</option>
+                            <option value="3">Severe</option>
+                            <option value="4">Total</option>
+                        </select>
+
+                    </div>
+
+
+                    <!-- STRUCTURE -->
+
+                    <div class="damage-row">
+
+                        <div>
+                            <strong>🏗️ Structure</strong>
+                            <small>Foundation, columns, beams</small>
+                        </div>
+
+                        <select class="damage-select" data-weight="0.20">
+                            <option value="0">None</option>
+                            <option value="1">Minor</option>
+                            <option value="2">Moderate</option>
+                            <option value="3">Severe</option>
+                            <option value="4">Total</option>
+                        </select>
+
+                    </div>
+
+
+                    <!-- FLOORS -->
+
+                    <div class="damage-row">
+
+                        <div>
+                            <strong>⬛ Floors</strong>
+                            <small>Slabs, subfloor, saturation</small>
+                        </div>
+
+                        <select class="damage-select" data-weight="0.10">
+                            <option value="0">None</option>
+                            <option value="1">Minor</option>
+                            <option value="2">Moderate</option>
+                            <option value="3">Severe</option>
+                            <option value="4">Total</option>
+                        </select>
+
+                    </div>
+
+
+                    <!-- SERVICES -->
+
+                    <div class="damage-row">
+
+                        <div>
+                            <strong>⚡ Services</strong>
+                            <small>Power, water, sanitation</small>
+                        </div>
+
+                        <select class="damage-select" data-weight="0.12">
+                            <option value="0">None</option>
+                            <option value="1">Minor</option>
+                            <option value="2">Moderate</option>
+                            <option value="3">Severe</option>
+                            <option value="4">Total</option>
+                        </select>
+
+                    </div>
+
+
+                    <!-- CONTENTS -->
+
+                    <div class="damage-row">
+
+                        <div>
+                            <strong>🪑 Contents</strong>
+                            <small>Furniture, stock, equipment</small>
+                        </div>
+
+                        <select class="damage-select" data-weight="0.12">
+                            <option value="0">None</option>
+                            <option value="1">Minor</option>
+                            <option value="2">Moderate</option>
+                            <option value="3">Severe</option>
+                            <option value="4">Total</option>
+                        </select>
+
+                    </div>
+
+
+                    <!-- DAMAGE RESULT -->
+
+                    <div class="damage-result">
+
+                        <h3>Estimated Damage</h3>
+
+                        <div id="damagePercentage">
+                            0%
+                        </div>
+
+                        <div id="damageCategory">
+                            No Assessment
+                        </div>
+
+                        <div id="placard">
+                            🟢 INSPECTED
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ADDITIONAL INFORMATION -->
+
+                <div class="form-box">
+
+                    <h3>3. Additional Information</h3>
+
+                    <div class="form-grid">
+
+                        <div class="input-group">
+                            <label>Waterline / Flood Level</label>
+
+                            <input
+                                type="text"
+                                id="waterline"
+                                placeholder="Example: 1.5 meters">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Number of Occupants</label>
+
+                            <input
+                                type="number"
+                                id="occupants"
+                                min="0"
+                                value="0">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Displaced People</label>
+
+                            <input
+                                type="number"
+                                id="displaced"
+                                min="0"
+                                value="0">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Injuries</label>
+
+                            <input
+                                type="number"
+                                id="injuries"
+                                min="0"
+                                value="0">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Estimated Cost ₹</label>
+
+                            <input
+                                type="number"
+                                id="cost"
+                                min="0"
+                                placeholder="Estimated repair cost">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Utilities</label>
+
+                            <select id="utilities">
+
+                                <option>Available</option>
+
+                                <option>Partially Available</option>
+
+                                <option>Not Available</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="input-group">
+                            <label>Access</label>
+
+                            <select id="access">
+
+                                <option>Accessible</option>
+
+                                <option>Restricted</option>
+
+                                <option>Not Accessible</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label>Notes</label>
+
+                        <textarea
+                            id="notes"
+                            rows="5"
+                            placeholder="Enter additional observations..."></textarea>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PHOTO -->
+
+                <div class="form-box">
+
+                    <h3>4. Damage Photos</h3>
+
+                    <input
+                        type="file"
+                        id="photoInput"
+                        accept="image/*"
+                        multiple>
+
+                    <div id="photoPreview" class="photo-preview"></div>
+
+                </div>
+
+
+
+                <!-- GPS -->
+
+                <div class="form-box">
+
+                    <h3>5. Location</h3>
+
+                    <button
+                        type="button"
+                        id="gpsBtn"
+                        class="secondary-btn">
+
+                        📍 Get Current GPS Location
+
+                    </button>
+
+                    <p id="gpsResult">
+                        Location not captured
+                    </p>
+
+                    <input type="hidden" id="gps">
+
+                </div>
+
+
+
+                <!-- BUTTONS -->
+
+                <div class="form-buttons">
+
+                    <button
+                        type="submit"
+                        class="save-btn">
+
+                        💾 Save Assessment
+
+                    </button>
+
+                    <button
+                        type="button"
+                        id="clearBtn"
+                        class="clear-btn">
+
+                        🔄 Clear Form
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+
+        <!-- ================= RECORDS ================= -->
+
+        <section id="records" class="page">
+
+            <h2>Saved Assessment Records</h2>
+
+
+            <div class="record-tools">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="🔍 Search records...">
+
+                <button
+                    id="exportBtn"
+                    class="secondary-btn">
+
+                    📥 Export CSV
+
+                </button>
+
+            </div>
+
+
+            <div id="recordsContainer">
+
+                <div class="empty-message">
+
+                    No assessment records found.
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <footer>
+
+        <p>
+            Disaster Damage Assessment System
+        </p>
+
+        <p>
+            Academic Project | Machine Learning
+        </p>
+
+    </footer>
+
+
+    <!-- IMPORTANT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
